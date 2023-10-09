@@ -1,0 +1,6 @@
+build==0.10.0
+packaging==23.0
+paho-mqtt==1.6.1
+pyproject-hooks==1.0.0
+pyttsx3==2.90
+tomli==2.0.1
