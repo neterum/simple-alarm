@@ -16,9 +16,3 @@ class Mqttdetect:
 
     def threadLoop(self):
         self.client.loop_forever()
-        
-    # def stopThreadLoop(self):
-    #     self.client.loop_stop()
-
-    # def on_message(client, userdata, msg):
-    #     print(str(msg.payload.decode()))
