@@ -23,7 +23,7 @@ class Database:
             content = file.read()
             self.devices = self.readJson(content)
         else:
-            print("Missing devices file.  Will not trigger alarms")
+            self.logger.critical("Missing devices file.  Will not trigger alarms")
 
     def getDevices(self):
         """

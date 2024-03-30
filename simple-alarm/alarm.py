@@ -8,7 +8,6 @@ from mqttdetect import Mqttdetect
 from database import Database
 from speech import Speech
 from sensorstatemachine import SensorStateMachine
-from log import Log
 import json
 import logging
 import logging.config
