@@ -84,4 +84,5 @@ cd simple-alarm
 source venv/bin/activate
 pip3 install -r requirements.txt
 python simple-alarm/alarm.py
+ctrl+c to exit
 ```
