@@ -21,7 +21,7 @@ class Alarm:
         class.
         """
 
-        config_file = 'logging.ini'
+        config_file = strings.LOGGING_FILENAME
         config = configparser.ConfigParser()
         config.read(config_file)
 
@@ -40,11 +40,11 @@ class Alarm:
         with open(config_file, 'w') as configfile:
             config.write(configfile)
 
-        logging.config.fileConfig("logging.ini")
+        logging.config.fileConfig(strings.LOGGING_FILENAME)
 
-        self.logger = logging.getLogger("mainLogger")
+        self.logger = logging.getLogger('mainLogger')
         self.logger.debug('debug message')
-        self.logger.critical("critical message")
+        self.logger.critical('critical message')
         self.logger.propagate = False
 
         # Create an MQTT object. Initialize it by passing a method from this
@@ -85,7 +85,7 @@ class Alarm:
         Sends the tracked device to the state machine to decide where or not
         to speak a sound.
         """
-        if data["switch1"] == "OPEN":
+        if data['switch1'] == 'OPEN':
             self.stateMachine.open(id=data["id"], data=data)
         else:
             self.stateMachine.close(id=data["id"])
