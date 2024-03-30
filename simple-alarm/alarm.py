@@ -67,9 +67,6 @@ class Alarm:
         # and not after every "open" MQTT message.
         self.stateMachine = SensorStateMachine()
 
-        # All received MQTT messages are outputted to a log.txt file located
-        # in same directory of application.  ToDo: Improve this
-        self.file = open("./log.txt", 'w')
         for device in self.database.devices:
             self.stateMachine.addSensor(id=device["id"], open_callback=self.sensor_speak)
 
@@ -79,7 +76,6 @@ class Alarm:
         the database object to determine if it came from a tracked sensor.
         """
         print(str(msg.payload.decode()))
-        # self.file.write(msg.payload.decode() + "\n")
         self.logger.debug(msg.payload.decode())
         # Might be able to just send msg, not sure yet
         self.database.sensorDetected(str(msg.payload.decode()))
