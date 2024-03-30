@@ -46,6 +46,7 @@ class Alarm:
         self.logger = logging.getLogger("mainLogger")
         self.logger.debug('debug message')
         self.logger.critical("critical message")
+        self.logger.propagate = False
 
         # Create an MQTT object. Initialize it by passing a method from this
         # object to be called after receiving an MQTT message.
